@@ -1,3 +1,17 @@
+# Ignore Excel Data Files (to prevent uploading sensitive data)
 *.xlsx
+*.xls
+*.csv
+
+# Python environment and cache
 __pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
 .env
+
+# System files
+.DS_Store
+Thumbs.db
