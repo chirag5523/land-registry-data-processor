@@ -1,7 +1,15 @@
 # 🏠 Land Registry Data Processor
 
 This project is a two-stage Python automation pipeline designed to validate property listing data against official UK Land Registry records. It handles everything from API data retrieval to logical validation and incremental database updates.
+
 🔄 Project Workflow
+graph TD
+    A[Input Data.xlsx] --> B(land_registry_lookup.py)
+    B -->|API Query| C[Land Registry SPARQL Endpoint]
+    C --> B
+    B --> D[Output_Land_Registery_Check.xlsx]
+    D --> E(land-registry-data-processor.py)
+    E -->|Validation & Merge| F[(Final_Data_2025.xlsx)]
 
 The system operates in two distinct phases:
 Phase 1: Data Enrichment (land_registry_lookup.py)
